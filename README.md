@@ -27,7 +27,6 @@ Güzellik salonları, kuaförler ve berberler için geliştirilmiş; WhatsApp ot
 
 ### 📸 Ekran Görüntüleri
 
-*(Buraya projenin çalıştığını gösteren 1-2 adet WhatsApp sohbeti ve Webview takvim ekran görüntüsü eklenecektir.)*
 
 ---
 
