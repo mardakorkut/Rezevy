@@ -1,0 +1,31 @@
+# --- Sanal Ortamlar ---
+venv/
+venv314/
+.venv/
+
+# --- Python & Cache ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Güvenlik & Konfigürasyon (EN KRİTİK OLANLAR) ---
+.env
+credentials.json
+.vscode/settings.json
+
+# --- Loglar ve Veri ---
+logs/
+ngrok_requests.json
+ngrok_summary.txt
+*.log
+
+# --- Araçlar & Binaries ---
+ngrok.exe
+ngrok
+.ngrok*
+
+# --- Windows / Mac Sistem Çöpleri ---
+Thumbs.db
+Desktop.ini
+.DS_Store
