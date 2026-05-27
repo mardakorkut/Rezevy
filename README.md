@@ -27,12 +27,20 @@ Güzellik salonları, kuaförler ve berberler için geliştirilmiş; WhatsApp ot
 
 ### 📸 Ekran Görüntüleri
 
+<p align="center">
+  <img src="assets/whatsapp_mesaj_basla.jpg" width="350" alt="Rezevy WhatsApp Mesaj ve Link Başlangıcı">
+  <img src="assets/takvim_webview_kvkk.jpg" width="350" alt="Rezevy Takvim Webview ve KVKK Onayı">
+</p>
+
+<p align="center">
+  <img src="assets/webview_tamamlandi.jpg" width="350" alt="Rezevy Web Tamamlama ve Sohbete Dönüş">
+  <img src="assets/whatsapp_onay_mesaji.jpg" width="350" alt="Rezevy WhatsApp Sohbet Onay Mesajı">
+</p>
 
 ---
 
 ### 📂 Proje Yapısı (Folder Structure)
 
-Proje, Clean Architecture prensiplerine sadık kalınarak ölçeklenebilir bir modüler yapıda kurgulanmıştır:
 
 ```text
 Rezevy/
@@ -50,3 +58,63 @@ Rezevy/
 ├── .env.example                 # Çevresel değişkenlerin şablonu (Gizli veriler hariç)
 ├── .gitignore                   # Güvenlik için repoya dahil edilmeyen dosyalar
 └── requirements.txt             # Proje bağımlılıkları
+```
+*(Not: Sunucuya ve lokale özel `__pycache__`, `.venv`, `ngrok.exe` ve `credentials.json` gibi dosyalar mimari gereği repoya dahil edilmemiştir.)*
+
+---
+
+### 🚀 Kurulum ve Çalıştırma (Local Setup)
+
+Projeyi kendi bilgisayarınızda (local) çalıştırmak için aşağıdaki adımları izleyebilirsiniz.
+
+**1. Repoyu Klonlayın ve Sanal Ortam Oluşturun:**
+```bash
+git clone [https://github.com/KULLANICI_ADIN/rezevy.git](https://github.com/KULLANICI_ADIN/rezevy.git)
+cd rezevy
+python -m venv venv
+
+# Windows için:
+venv\Scripts\activate
+# MacOS/Linux için:
+source venv/bin/activate
+```
+
+**2. Gerekli Kütüphaneleri Yükleyin:**
+```bash
+pip install -r requirements.txt
+```
+
+**3. Çevresel Değişkenleri (Environment Variables) Ayarlayın:**
+Proje ana dizininde bulunan `.env.example` dosyasının adını `.env` olarak değiştirin ve içindeki API anahtarlarını kendi sisteminize göre doldurun:
+
+```ini
+# .env dosyası
+TWILIO_ACCOUNT_SID=your_twilio_sid_here
+TWILIO_AUTH_TOKEN=your_twilio_auth_token_here
+TWILIO_PHONE_NUMBER=whatsapp:+1234567890
+TWILIO_WHATSAPP_FROM=whatsapp:+1234567890
+
+# Güvenlik & Konfigürasyon
+BOOKING_LINK_SECRET=your_super_secret_hmac_key
+REMINDER_MODE=smart
+FUNNEL_LOG_ENABLED=true
+KVKK_CONSENT_VERSION=v1
+```
+
+**4. Uygulamayı ve Tüneli Başlatın:**
+FastAPI sunucusunu başlatmak için Uvicorn kullanın:
+```bash
+python -m uvicorn app.main:app --reload
+```
+WhatsApp webhooks'un local sunucunuza erişebilmesi için Ngrok (veya benzeri) bir tünel açın:
+```bash
+ngrok http 8000
+```
+*Ngrok'tan aldığınız HTTPS linkini, Twilio panelindeki Sandbox Webhook URL kısmına (`/api/webhook` uç noktası ile) eklemeyi unutmayın.*
+
+---
+
+### 👨‍💻 Geliştirici
+
+**Muhammed Arda Korkut**
+Computer Engineering Student & Backend Developer
