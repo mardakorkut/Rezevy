@@ -89,16 +89,42 @@ Proje ana dizininde bulunan `.env.example` dosyasının adını `.env` olarak de
 
 ```ini
 # .env dosyası
+# Uygulama ve Bölge Ayarları
+APP_ENV=dev
+TIMEZONE=Europe/Istanbul
+
+# LLM Provider Seçimi: openai | gemini
+LLM_PROVIDER=gemini
+
+# OpenAI Ayarları (Kullanılacaksa)
+OPENAI_API_KEY=your_openai_api_key_here
+OPENAI_MODEL=gpt-4o-mini
+
+# Gemini Ayarları (Kullanılacaksa)
+GEMINI_API_KEY=your_gemini_api_key_here
+GEMINI_MODEL=gemini-2.5-flash
+
+# Google Calendar Entegrasyonu
+GOOGLE_CALENDAR_ID=your_calendar_id_here@group.calendar.google.com
+GOOGLE_CREDENTIALS_PATH=credentials.json
+
+# Twilio (WhatsApp) Ayarları
 TWILIO_ACCOUNT_SID=your_twilio_sid_here
 TWILIO_AUTH_TOKEN=your_twilio_auth_token_here
-TWILIO_PHONE_NUMBER=whatsapp:+1234567890
-TWILIO_WHATSAPP_FROM=whatsapp:+1234567890
+TWILIO_WHATSAPP_NUMBER=whatsapp:+1234567890
 
-# Güvenlik & Konfigürasyon
-BOOKING_LINK_SECRET=your_super_secret_hmac_key
+# Güvenlik & Konfigürasyon (min 32 bytes = 64 hex chars)
+BOOKING_LINK_SECRET=your_super_secret_hmac_key_here
+# Opsiyonel: Ngrok veya prod URL'nizi buraya girebilirsiniz
+# BOOKING_BASE_URL=https://your-ngrok-url.ngrok-free.app
+
+# Smart Reminder Kuralı (smart | double | single24 | single2 | none)
 REMINDER_MODE=smart
-FUNNEL_LOG_ENABLED=true
+
+# KVKK & Dönüşüm Hunisi (Funnel)
 KVKK_CONSENT_VERSION=v1
+PRIVACY_NOTICE_URL=https://example.com/kvkk-aydinlatma
+FUNNEL_LOG_ENABLED=true
 ```
 
 **4. Uygulamayı ve Tüneli Başlatın:**
