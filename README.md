@@ -67,16 +67,22 @@ Rezevy/
 
 Projeyi kendi bilgisayarınızda (local) çalıştırmak için aşağıdaki adımları izleyebilirsiniz.
 
-**1. Repoyu Klonlayın ve Sanal Ortam Oluşturun:**
+### 1. Repoyu Klonlayın ve Sanal Ortam Oluşturun
+
 ```bash
 git clone [https://github.com/mardakorkut/Rezevy.git](https://github.com/mardakorkut/Rezevy.git)
-cd rezevy
-python -m venv venv
+cd Rezevy
+python -m venv venv314
+```
 
-# Windows için:
-venv\Scripts\activate
-# MacOS/Linux için:
-source venv/bin/activate
+**Windows için:**
+```powershell
+.\venv314\Scripts\activate
+```
+
+**MacOS/Linux için:**
+```bash
+source venv314/bin/activate
 ```
 
 **2. Gerekli Kütüphaneleri Yükleyin:**
