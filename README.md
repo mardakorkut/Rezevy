@@ -70,7 +70,7 @@ Projeyi kendi bilgisayarınızda (local) çalıştırmak için aşağıdaki adı
 ### 1. Repoyu Klonlayın ve Sanal Ortam Oluşturun
 
 ```bash
-git clone [https://github.com/mardakorkut/Rezevy.git](https://github.com/mardakorkut/Rezevy.git)
+git clone https://github.com/mardakorkut/Rezevy.git
 cd Rezevy
 python -m venv venv314
 ```
